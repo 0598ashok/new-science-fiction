@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Aria Vance</title>
+
+  <meta name="keywords" content="Aria Vance, Science Fiction Author, Fantasy Author, Cosmic Chronicles, The Stellar Void, Books, Sci-Fi Novels">
+  <meta name="author" content="Aria Vance">
+  <meta property="og:title" content="Register | Aria Vance">
+  <meta property="og:description" content="Official website of Aria Vance, author of The Cosmic Chronicles. Explore books, the universe, and join the Vault.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ariavance.com">
+  <meta property="og:image" content="../assets/images/content/unsplash-14.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Register | Aria Vance">
+  <meta name="twitter:description" content="Official website of Aria Vance, author of The Cosmic Chronicles. Explore books, the universe, and join the Vault.">
+  <meta name="twitter:image" content="../assets/images/content/unsplash-14.jpg">
+  <link rel="canonical" href="https://ariavance.com">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- RTL Support Settings -->
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body class="auth-wrapper">
+
+  <!-- Technical Blueprint Background -->
+  <div class="auth-blueprint-bg"></div>
+
+
+  <main class="auth-main-tech">
+
+    <div class="monolithic-card">
+        <div class="scanning-bar" style="position: absolute; top: 0; left: 0; z-index: 100;">
+            <div class="scanning-line"></div>
+        </div>
+
+        <!-- Technical Visual Side -->
+        <div class="monolith-visual-side">
+            <img src="../assets/images/ignis-prime.png" class="visual-side-bg" alt="Ignis Prime Background">
+            <div class="visual-side-overlay"></div>
+        </div>
+
+        <div class="monolith-content">
+            <a href="index.html" class="auth-form-logo">
+                <i class="fa-solid fa-star-of-david"></i>
+                <span>ARIA VANCE</span>
+            </a>
+            <header class="monolith-header">
+                <span class="monolith-brand">Registration Portal</span>
+                <h1 class="monolith-title">Create Account</h1>
+                <p class="monolith-subtitle">Join the community of star-watchers today.</p>
+            </header>
+
+            <form action="dashboard.html" method="GET" class="tech-form">
+                <div class="form-group">
+                    <label class="tech-label">Full Name</label>
+                    <input type="text" class="tech-input" placeholder="e.g. Arjun Sharma" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="tech-label">Email ID</label>
+                    <input type="email" class="tech-input" placeholder="e.g. arjun@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="tech-label">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" class="tech-input" id="password" placeholder="Create a strong password" required>
+                        <i class="fa-solid fa-eye password-toggle" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="tech-label">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" class="tech-input" id="confirm-password" placeholder="Repeat your password" required>
+                        <i class="fa-solid fa-eye password-toggle" id="toggleConfirmPassword"></i>
+                    </div>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.75rem; margin-top: 1rem;">
+                    <input type="checkbox" id="newsletter" style="margin-top: 0.25rem;">
+                    <label for="newsletter" style="font-size: 0.8rem; color: var(--auth-text-dim); line-height: 1.4;">Subscribe to our newsletter for latest updates.</label>
+                </div>
+                
+                <button type="submit" class="btn-tech">Create My Account</button>
+
+                <div class="social-auth-section">
+                    <div class="social-separator">OR CONTINUE WITH</div>
+                    <div class="social-btns-grid">
+                        <button type="button" class="btn-social">
+                            <i class="fa-brands fa-google"></i> Google
+                        </button>
+                        <button type="button" class="btn-social">
+                            <i class="fa-brands fa-apple"></i> Apple
+                        </button>
+                        <button type="button" class="btn-social">
+                            <i class="fa-brands fa-facebook"></i> Facebook
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <footer class="monolith-footer">
+              <p>Already have an account? <a href="login.html">Login Now</a></p>
+            </footer>
+        </div>
+    </div>
+  </main>
+
+
+  <script src="../assets/js/main.js"></script>
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../assets/js/register.js"></script>
+  <!-- RTL Support Script -->
+  <script src="../assets/js/rtl-ltr.js"></script>
+</body>
+</html>

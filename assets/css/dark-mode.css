@@ -1,0 +1,102 @@
+/* 
+ * Dark Mode CSS - Science Fiction / Fantasy Author Template
+ * Theme: Midnight Navy & Champagne Gold Dark Mode
+ */
+
+[data-theme="dark"] {
+  /* Colors - Dark Mode Overrides */
+  --color-bg: #0b021a;
+  /* Very deep dark purple */
+  --color-surface: #14072b;
+  /* Deep Purple Surface */
+
+  --color-text: #f3e8ff;
+  /* Light purple-white */
+  --color-text-muted: #cbd5e1;
+  /* Lighter for readability */
+  --color-border: #4c3a7a;
+  /* More visible purple border */
+  --card-border: #4c3a7a;
+
+  --color-primary: #a78bfa;
+  /* Lighter violet for dark mode */
+  --color-primary-light: #c084fc;
+  --color-primary-dark: #f3e8ff;
+  /* Headings become Light Violet/White */
+
+  --color-accent: #a78bfa;
+  /* Lighter accent for dark mode */
+  --color-accent-hover: #c084fc;
+
+  --color-bg-light: #1a0b33;
+  --bg-light-gray: #14072b;
+
+  /* Shadows for dark mode */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.8);
+  --shadow-glow: 0 0 20px rgba(167, 139, 250, 0.3);
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.2);
+  border-color: #bb85fc;
+  border-top: 4px solid #bb85fc;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: rgba(255, 255, 255, 0.05); /* Slightly visible */
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: rgba(243, 232, 255, 0.5); /* Clearer placeholder */
+}
+
+[data-theme="dark"] .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* Dashboard specific dark mode tweaks */
+[data-theme="dark"] .dashboard-sidebar {
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .dashboard-nav a:hover,
+[data-theme="dark"] .dashboard-nav a.active {
+  background-color: rgba(167, 139, 250, 0.1);
+  color: var(--color-accent);
+}
+
+/* Testimonials and Stars */
+[data-theme="dark"] .testimonial-stars i {
+  color: #fbbf24; /* Bright gold for dark mode */
+}
+
+[data-theme="dark"] .testimonial-card strong {
+  color: var(--color-primary);
+}
+
+/* Secondary headings visibility */
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4 {
+  color: var(--color-primary-dark);
+}

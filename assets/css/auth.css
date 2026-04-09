@@ -1,0 +1,509 @@
+/* 
+ * Authentication Pages - Design C: Technical Blueprint & Holographic Interface
+ * Sharp monoliths, scanning effects, blueprint grids
+ */
+
+:root {
+    --auth-bg: #0b021a;
+    --auth-accent: #954ff0;
+    --auth-accent-glow: rgba(149, 79, 240, 0.3);
+    --auth-grid-color: rgba(149, 79, 240, 0.15);
+    --auth-monolith: #14072b;
+    --auth-text-dim: #cbd5e1; /* Lighter for visibility */
+}
+
+[data-theme="light"] {
+    --auth-bg: #F9FAFB;
+    --auth-monolith: #ffffff;
+    --auth-grid-color: rgba(149, 79, 240, 0.08);
+    --auth-text-dim: #4B5563; /* Darker for light mode visibility */
+}
+
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--auth-bg);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Blueprint Grid Background */
+.auth-blueprint-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(var(--auth-grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--auth-grid-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 0;
+}
+
+.auth-blueprint-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--auth-bg) 80%);
+}
+
+/* Centered Main */
+.auth-main-tech {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem; /* Reduced for perfect centering */
+    position: relative;
+    z-index: 10;
+}
+
+/* Technical Back Button */
+.tech-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--auth-text-dim);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.tech-back-btn i {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-back-btn:hover {
+    color: var(--auth-accent);
+    opacity: 1;
+}
+
+.tech-back-btn:hover i {
+    transform: translateX(-4px);
+}
+
+.monolithic-card {
+    width: 100%;
+    max-width: 1100px; /* Increased width for full-width expansive feel */
+    background: var(--auth-monolith);
+    border: 1px solid rgba(149, 79, 240, 0.2);
+    border-radius: 4px;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5); /* Reduced box-shadow */
+    display: flex; /* Side-by-side inside the monolith */
+    max-height: 95vh; /* Ensure it fits on screen */
+    animation: monolithRise 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes monolithRise {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scanning Status Bar */
+.scanning-bar {
+    height: 4px;
+    width: 100%;
+    background: rgba(168, 85, 247, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.scanning-line {
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, var(--auth-accent), transparent);
+    animation: scanMove 4s infinite linear; /* Slower scan for elegance */
+}
+
+@keyframes scanMove {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Content Sections */
+.monolith-visual-side {
+    flex: 1; /* Equal split */
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.visual-side-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 1; /* Full clarity */
+    z-index: 1;
+}
+
+.visual-side-overlay {
+    display: none; /* Removed as per user request for "normal images" */
+}
+
+/* Auth Form Logo */
+.auth-form-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the logo */
+    gap: 0.8rem;
+    text-decoration: none;
+    margin-bottom: 1.25rem; /* Reduced from 2rem */
+    transition: all 0.3s ease;
+}
+
+.auth-form-logo i {
+    color: var(--auth-accent);
+    font-size: 1.5rem;
+}
+
+.auth-form-logo span {
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .auth-form-logo span {
+    color: #fff;
+}
+
+.auth-form-logo:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.monolith-content {
+    flex: 1; /* Equal split */
+    padding: 1.25rem 3.5rem; /* Further reduced for no-scroll fit */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 95vh;
+    overflow-y: auto; /* Fallback for small screens */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+.monolith-content::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.monolith-header {
+    margin-bottom: 1.5rem; /* Reduced for more breathing room on small screens */
+    position: relative;
+    text-align: center; /* Center brand, title, subtitle */
+}
+
+.monolith-brand {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: var(--auth-accent);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem; /* Reduced margin */
+    display: block;
+}
+
+.monolith-title {
+    font-size: 1.75rem; /* Reduced from 2.25rem */
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.monolith-subtitle {
+    font-size: 0.85rem; /* Reduced from 0.95rem */
+    color: var(--auth-text-dim);
+    font-family: 'Inter', sans-serif;
+}
+
+.tech-form {
+    margin-top: 2.25rem; /* Added space before the first label */
+}
+
+.tech-form .form-group {
+    margin-top: 1.5rem; /* Added space above labels */
+    margin-bottom: 1rem; /* Compact bottom to prevent scrollbars */
+    position: relative;
+}
+
+.tech-form .form-group:first-child {
+    margin-top: 0;
+}
+
+.tech-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(149, 79, 240, 0.2);
+    padding: 0.5rem 0; /* Reduced from 0.75rem */
+    font-size: 0.95rem; /* Reduced from 1.1rem */
+    color: #fff; /* Default for dark background */
+    transition: all 0.4s ease;
+    border-radius: 0;
+}
+
+.tech-input::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Lightened for better visibility */
+    font-weight: 300;
+}
+
+[data-theme="light"] .tech-input {
+    color: #1F2937; /* Fixed: explicitly setting dark color for light mode */
+}
+
+[data-theme="light"] .tech-input::placeholder {
+    color: rgba(0, 0, 0, 0.3); /* Subtled for light mode */
+}
+
+[data-theme="light"] .tech-input {
+    color: var(--color-text);
+}
+
+.tech-input:focus {
+    outline: none;
+    border-color: var(--auth-accent);
+    box-shadow: 0 10px 20px -10px var(--auth-accent-glow);
+}
+
+.tech-label {
+    position: absolute;
+    top: -1.1rem; /* Nudged closer to input for more top-side breathing room */
+    left: 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--auth-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Password Toggle Support */
+.password-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0;
+    bottom: 0.5rem;
+    cursor: pointer;
+    color: var(--auth-text-dim);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    padding: 0.25rem;
+    z-index: 10;
+}
+
+.password-toggle:hover {
+    color: var(--auth-accent);
+    transform: scale(1.1);
+}
+
+[data-theme="light"] .password-toggle {
+    color: #4B5563;
+}
+
+/* Primary Action */
+.btn-tech {
+    background: transparent;
+    border: 1px solid var(--auth-accent);
+    color: var(--auth-accent);
+    width: 100%;
+    padding: 0.75rem; /* Further reduced for a sleeker look */
+    font-size: 0.85rem; /* Reduced from 0.95rem */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Reduced from 3px */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1; /* Added to ensure stacking context */
+}
+
+.btn-tech::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -101%; width: 101%; height: 100%;
+    background: var(--auth-accent);
+    z-index: -1;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tech:hover {
+    color: #fff !important; /* Force visibility */
+}
+
+.btn-tech:hover::before {
+    left: 0;
+}
+
+.monolith-footer {
+    margin-top: 0.75rem; /* Further reduced to help fit without scrollbars */
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--auth-text-dim);
+}
+
+.monolith-footer a {
+    color: var(--auth-accent);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+.monolith-footer a:hover {
+    border-color: var(--auth-accent);
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+    .monolithic-card {
+        flex-direction: column;
+        max-width: 500px;
+    }
+    
+    .monolith-visual-side {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .auth-main-tech {
+        padding: 7rem 1rem 5rem;
+    }
+    .monolith-content {
+        padding: 2.5rem 1.25rem;
+    }
+    .monolith-title {
+        font-size: 1.75rem;
+    }
+    .monolith-subtitle {
+        font-size: 0.85rem;
+    }
+    .btn-tech {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    .tech-input {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+    }
+}
+
+/* Navbar Visibility Fixes for Light Mode on Auth Pages */
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .nav-link:not(.dropdown-item),
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .brand-logo,
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .dropdown-toggle,
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .theme-toggle,
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .dir-toggle,
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .btn-outline,
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .mobile-toggle {
+    color: #1F2937 !important;
+    border-color: #1F2937 !important; /* Fix button outlines */
+}
+
+[data-theme="light"] .site-header.navbar-transparent-light:not(.scrolled) .brand-logo i {
+    color: var(--auth-accent) !important;
+}
+
+[data-theme="light"] .site-header .dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] .site-header .dropdown-item {
+    color: #1F2937 !important;
+}
+
+[data-theme="light"] .site-header .dropdown-item:hover {
+    background-color: rgba(149, 79, 240, 0.05) !important;
+    color: var(--auth-accent) !important;
+}
+
+/* Social Authentication Section */
+.social-auth-section {
+    margin-top: 0.5rem; /* Reduced from 1rem */
+    position: relative;
+    z-index: 5;
+}
+
+.social-separator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+    color: var(--auth-text-dim);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.social-separator::before,
+.social-separator::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(149, 79, 240, 0.2);
+}
+
+.social-btns-grid {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-social {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(149, 79, 240, 0.2);
+    color: var(--auth-text-dim);
+    padding: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+[data-theme="light"] .btn-social {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-social:hover {
+    border-color: var(--auth-accent);
+    color: var(--auth-accent);
+    box-shadow: 0 5px 15px -5px var(--auth-accent-glow);
+    transform: translateY(-2px);
+}
+
+.btn-social i {
+    font-size: 1.1rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .social-btns-grid {
+        flex-direction: column;
+    }
+}

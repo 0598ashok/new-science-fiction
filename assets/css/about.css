@@ -1,0 +1,171 @@
+/* About Page Specific Styles */
+
+.about-cinematic-page {
+    overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Hero Section Refinements */
+.about-hero {
+    background-color: #000;
+}
+
+.about-hero .hero-title {
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+}
+
+/* Typography Refinements */
+.hero-title {
+    font-family: var(--font-heading);
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.about-cinematic-page h1,
+.about-cinematic-page h2,
+.about-cinematic-page h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* Filter Effects */
+.about-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(149, 79, 240, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about-collage {
+    position: relative;
+    height: 600px;
+}
+
+/* Custom Grids for About Page */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+    .grid-3, .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero {
+        height: 80vh;
+    }
+
+    .about-collage {
+        height: 400px;
+    }
+    
+    .section {
+        padding: 4rem 0 !important;
+    }
+    
+    .grid-2 {
+        gap: 2rem !important;
+    }
+}
+
+/* Scroll Snap (Optional but adds to the cinematic feel) */
+/* 
+.about-cinematic-page {
+    scroll-snap-type: y proximity;
+}
+.about-cinematic-page section {
+    scroll-snap-align: start;
+}
+*/
+
+/* Typography Refinements */
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+/* Philosophy Cards */
+.philosophy-card {
+    position: relative;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.philosophy-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(149, 79, 240, 0.7) 100%);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-glow);
+}
+
+.philosophy-card:hover::before {
+    opacity: 0.85;
+}
+
+.philosophy-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.pc-1 { background-image: url('../images/content/unsplash-6.jpg'); }
+.pc-2 { background-image: url('../images/content/unsplash-5.jpg'); }
+.pc-3 { background-image: url('../images/content/unsplash-7.jpg'); }
