@@ -29,16 +29,20 @@
 /* Typography Refinements */
 .hero-title {
     font-family: var(--font-heading);
-    font-weight: 850;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: -1px;
 }
 
-.about-cinematic-page h1,
+.about-cinematic-page h1 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
 .about-cinematic-page h2,
 .about-cinematic-page h3 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 500;
 }
 
 /* Filter Effects */

@@ -70,7 +70,7 @@
 .hero-title-v2 {
     color: #ffffff;
     font-size: clamp(2rem, 4.5vw, 3.2rem);
-    font-weight: 850;
+    font-weight: 600;
     line-height: 1.1;
     letter-spacing: -1px;
     margin-bottom: 1.5rem;
@@ -255,7 +255,7 @@
 .mosaic-main-title {
     font-size: 2.2rem;
     color: var(--architect-title);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .mosaic-main-subtitle {
@@ -311,7 +311,7 @@
 .mosaic-item-title {
     font-size: 1.2rem;
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
@@ -347,7 +347,7 @@
 .stat-box-modern h4 {
     font-size: 3rem !important;
     color: #ffffff !important;
-    font-weight: 850;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -381,7 +381,7 @@
 
 .philosophy-title {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--architect-title);
     letter-spacing: -1px;
 }
@@ -544,7 +544,7 @@
 .blueprint-title {
     font-size: 1.8rem;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -619,7 +619,7 @@
 .timeline-title {
     font-size: 1.4rem;
     color: var(--architect-title);
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 

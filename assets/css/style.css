@@ -1594,7 +1594,7 @@ ol {
 .footer-column h4 {
   font-family: var(--font-heading);
   font-size: clamp(0.9rem, 1.3vw, 1rem);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1rem;
   color: var(--color-primary-dark);
   text-transform: uppercase;
